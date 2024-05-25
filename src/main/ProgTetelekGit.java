@@ -10,7 +10,7 @@ public class ProgTetelekGit {
         megszamlalas(sorozat);
         maximumKivalasztas(sorozat);
         minimumKivalasztas(sorozat);
-        eldontesLegalabbEgy(sorozat);
+        eldontesLegalabbEgy(3, sorozat);
     }
     
     public static int[] tombotLeker() {
@@ -56,14 +56,12 @@ public class ProgTetelekGit {
         return tomb[minIndex];
     }
     
-    public static boolean eldontesLegalabbEgy(int[] tomb) {
-        int N = tomb.length;
-        int ker = 3;
+    public static boolean eldontesLegalabbEgy(int kereses, int[] tomb) {
         int i = 0;
-        while(i < N && !(tomb[i] > ker)){
+        while(i < tomb.length && !(tomb[i] > kereses)){
             i++;
         }
-        boolean valasz = i < N; 
+        boolean valasz = i < tomb.length; 
         return valasz;
     }
     
