@@ -1,53 +1,73 @@
 
-package osszegzestetelegit;
+package main;
 
 public class OsszegzesTeteleGit {
 
-    static int[] sorozat = {0, 1, 2, 3, 5}; 
+    public static int[] sorozat = {0, 1, 2, 3, 5}; 
     
     public static void main(String[] args) {
         osszegzes();
         megszamlalas();
         maximumKivalasztas();
         minimumKivalasztas();
+        eldontesLegalabbEgy();
+    }
+    
+    public static int[] tombotLeker() {
+        int tomb[] = sorozat;
+        return tomb;
     }
 
-    private static void osszegzes() {
+    public static int osszegzes() {
         int osszead = 0;
         for (int i = 0; i < sorozat.length; i++) {
             osszead += sorozat[i];
         }
-        System.out.println("[0, 1, 2, 3, 5] összege: " + osszead);
+        return osszead;
     }
 
-    private static void megszamlalas() {
+    public static int megszamlalas() {
         int db = 0;
         for (int i = 0; i < sorozat.length; i++) {
             if (sorozat[i] < 3) {
                 db++;
             }
         }
-        System.out.println("A sorozatban " + db + " db 3-nál kisebb elem van.");
+        return db;
     }
 
-    private static void maximumKivalasztas() {
+    public static int maximumKivalasztas() {
         int maxIndex = 0;
         for (int i = 1; i < sorozat.length; i++) {
             if(sorozat[i] > sorozat[maxIndex]){
                 maxIndex = i;
             }
         }
-        System.out.println("A legnagyobb elem: " + sorozat[maxIndex]);
+        return sorozat[maxIndex];
     }
 
-    private static void minimumKivalasztas() {
+    public static int minimumKivalasztas() {
         int minIndex = 0;
         for (int i = 1; i < sorozat.length; i++) {
             if(sorozat[i] < sorozat[minIndex]){
                 minIndex = i;
             }
         }
-        System.out.println("A legkisebb elem: " + sorozat[minIndex]);
+        return sorozat[minIndex];
     }
     
+    public static boolean eldontesLegalabbEgy() {
+        int N = sorozat.length;
+        int ker = 3;
+        int i = 0;
+        while(i < N && !(sorozat[i] > ker)){
+            i++;
+        }
+        boolean valasz = i < N; 
+        return valasz;
+    }
+    
+    public static void kiir(String szoveg) {
+        System.out.print(szoveg);
+    }
 }
