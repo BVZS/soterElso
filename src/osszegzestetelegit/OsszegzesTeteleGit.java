@@ -9,6 +9,7 @@ public class OsszegzesTeteleGit {
         osszegzes();
         megszamlalas();
         maximumKivalasztas();
+        minimumKivalasztas();
     }
 
     private static void osszegzes() {
@@ -37,6 +38,16 @@ public class OsszegzesTeteleGit {
             }
         }
         System.out.println("A legnagyobb elem: " + sorozat[maxIndex]);
+    }
+
+    private static void minimumKivalasztas() {
+        int minIndex = 0;
+        for (int i = 1; i < sorozat.length; i++) {
+            if(sorozat[i] < sorozat[minIndex]){
+                minIndex = i;
+            }
+        }
+        System.out.println("A legkisebb elem: " + sorozat[minIndex]);
     }
     
 }
