@@ -8,6 +8,7 @@ public class OsszegzesTeteleGit {
     public static void main(String[] args) {
         osszegzes();
         megszamlalas();
+        maximumKivalasztas();
     }
 
     private static void osszegzes() {
@@ -26,6 +27,16 @@ public class OsszegzesTeteleGit {
             }
         }
         System.out.println("A sorozatban " + db + " db 3-nál kisebb elem van.");
+    }
+
+    private static void maximumKivalasztas() {
+        int maxIndex = 0;
+        for (int i = 1; i < sorozat.length; i++) {
+            if(sorozat[i] > sorozat[maxIndex]){
+                maxIndex = i;
+            }
+        }
+        System.out.println("A legnagyobb elem: " + sorozat[maxIndex]);
     }
     
 }
